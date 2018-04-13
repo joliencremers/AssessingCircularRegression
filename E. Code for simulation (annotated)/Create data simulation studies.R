@@ -1,0 +1,338 @@
+createsimdataPN<-function(n, B11, B12, a1, a2, mu, sd, nsim){
+  set.seed(101)
+data<-array(NA,dim=c(n,4,nsim), dimnames=list(NULL,c("x1","y1","y2","theta"),NULL))
+for(i in 1:nsim){
+  source("E. Code for simulation (annotated)/Simulation functions data.R")
+  data[,,i]<-simregPN(n, B11, B12, a1, a2, mu, sd)
+}
+return(data)
+}
+
+dataF1a<-createsimdataPN(10,0.5,0.5,0,0,0,1,500)
+dataF1b<-createsimdataPN(50,0.5,0.5,0,0,0,1,500)
+dataF1c<-createsimdataPN(100,0.5,0.5,0,0,0,1,500)
+dataF2a<-createsimdataPN(10,0.5,0.5,0,0,-4,1,500)
+dataF2b<-createsimdataPN(50,0.5,0.5,0,0,-4,1,500)
+dataF2c<-createsimdataPN(100,0.5,0.5,0,0,-4,1,500)
+dataF3a<-createsimdataPN(10,0.5,0.5,0,0,10,1,500)
+dataF3b<-createsimdataPN(50,0.5,0.5,0,0,10,1,500)
+dataF3c<-createsimdataPN(100,0.5,0.5,0,0,10,1,500)
+
+dataG1a<-createsimdataPN(10,-0.2,-0.2,0,0,0,1,500)
+dataG1b<-createsimdataPN(50,-0.2,-0.2,0,0,0,1,500)
+dataG1c<-createsimdataPN(100,-0.2,-0.2,0,0,0,1,500)
+dataG2a<-createsimdataPN(10,-0.2,-0.2,0,0,-4,1,500)
+dataG2b<-createsimdataPN(50,-0.2,-0.2,0,0,-4,1,500)
+dataG2c<-createsimdataPN(100,-0.2,-0.2,0,0,-4,1,500)
+dataG3a<-createsimdataPN(10,-0.2,-0.2,0,0,10,1,500)
+dataG3b<-createsimdataPN(50,-0.2,-0.2,0,0,10,1,500)
+dataG3c<-createsimdataPN(100,-0.2,-0.2,0,0,10,1,500)
+
+dataH1a<-createsimdataPN(10,2,2,0,0,0,1,500)
+dataH1b<-createsimdataPN(50,2,2,0,0,0,1,500)
+dataH1c<-createsimdataPN(100,2,2,0,0,0,1,500)
+dataH2a<-createsimdataPN(10,2,2,0,0,-4,1,500)
+dataH2b<-createsimdataPN(50,2,2,0,0,-4,1,500)
+dataH2c<-createsimdataPN(100,2,2,0,0,-4,1,500)
+dataH3a<-createsimdataPN(10,2,2,0,0,10,1,500)
+dataH3b<-createsimdataPN(50,2,2,0,0,10,1,500)
+dataH3c<-createsimdataPN(100,2,2,0,0,10,1,500)
+
+dataG2a2<-createsimdataPN(10,-0.2,-0.2,0,0,-4,1,1000)
+dataG2a4<-createsimdataPN(1000,-0.2,-0.2,0,0,-4,1,500)
+dataG2a3<-createsimdataPN(500,-0.2,-0.2,0,0,-4,1,500)
+
+save(dataF1a,file="E. Code for simulation (annotated)/datasets/dataF1a.Rdata", compress="xz")
+save(dataF1b,file="E. Code for simulation (annotated)/datasets/dataF1b.Rdata", compress="xz")
+save(dataF1c,file="E. Code for simulation (annotated)/datasets/dataF1c.Rdata", compress="xz")
+save(dataF2a,file="E. Code for simulation (annotated)/datasets/dataF2a.Rdata", compress="xz")
+save(dataF2b,file="E. Code for simulation (annotated)/datasets/dataF2b.Rdata", compress="xz")
+save(dataF2c,file="E. Code for simulation (annotated)/datasets/dataF2c.Rdata", compress="xz")
+save(dataF3a,file="E. Code for simulation (annotated)/datasets/dataF3a.Rdata", compress="xz")
+save(dataF3b,file="E. Code for simulation (annotated)/datasets/dataF3b.Rdata", compress="xz")
+save(dataF3c,file="E. Code for simulation (annotated)/datasets/dataF3c.Rdata", compress="xz")
+
+save(dataG1a,file="E. Code for simulation (annotated)/datasets/dataG1a.Rdata", compress="xz")
+save(dataG1b,file="E. Code for simulation (annotated)/datasets/dataG1b.Rdata", compress="xz")
+save(dataG1c,file="E. Code for simulation (annotated)/datasets/dataG1c.Rdata", compress="xz")
+save(dataG2a,file="E. Code for simulation (annotated)/datasets/dataG2a.Rdata", compress="xz")
+save(dataG2b,file="E. Code for simulation (annotated)/datasets/dataG2b.Rdata", compress="xz")
+save(dataG2c,file="E. Code for simulation (annotated)/datasets/dataG2c.Rdata", compress="xz")
+save(dataG3a,file="E. Code for simulation (annotated)/datasets/dataG3a.Rdata", compress="xz")
+save(dataG3b,file="E. Code for simulation (annotated)/datasets/dataG3b.Rdata", compress="xz")
+save(dataG3c,file="E. Code for simulation (annotated)/datasets/dataG3c.Rdata", compress="xz")
+
+save(dataH1a,file="E. Code for simulation (annotated)/datasets/dataH1a.Rdata", compress="xz")
+save(dataH1b,file="E. Code for simulation (annotated)/datasets/dataH1b.Rdata", compress="xz")
+save(dataH1c,file="E. Code for simulation (annotated)/datasets/dataH1c.Rdata", compress="xz")
+save(dataH2a,file="E. Code for simulation (annotated)/datasets/dataH2a.Rdata", compress="xz")
+save(dataH2b,file="E. Code for simulation (annotated)/datasets/dataH2b.Rdata", compress="xz")
+save(dataH2c,file="E. Code for simulation (annotated)/datasets/dataH2c.Rdata", compress="xz")
+save(dataH3a,file="E. Code for simulation (annotated)/datasets/dataH3a.Rdata", compress="xz")
+save(dataH3b,file="E. Code for simulation (annotated)/datasets/dataH3b.Rdata", compress="xz")
+save(dataH3c,file="E. Code for simulation (annotated)/datasets/dataH3c.Rdata", compress="xz")
+
+save(dataG2a2,file="E. Code for simulation (annotated)/datasets/dataG2a2.Rdata", compress="xz")
+save(dataG2a3,file="E. Code for simulation (annotated)/datasets/dataG2a3.Rdata", compress="xz")
+save(dataG2a4,file="E. Code for simulation (annotated)/datasets/dataG2a4.Rdata", compress="xz")
+
+createsimdataPN_CIRC<-function(n,B11,B12,B21,B22,a1,a2,mu_c,k,nsim){
+  set.seed(101)
+  data<-array(NA,dim=c(n,5,nsim), dimnames=list(NULL,c("x1","x2","y1","y2","theta"),NULL))
+  for(i in 1:nsim){
+    source("E. Code for simulation (annotated)/Simulation functions data.R")
+    data[,,i]<-simregPN_CIRC(n,B11,B12,B21,B22,a1,a2,mu_c,k)
+  }
+  return(data)
+}
+
+dataI1a<-createsimdataPN_CIRC(10,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI1b<-createsimdataPN_CIRC(50,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI1c<-createsimdataPN_CIRC(100,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI2a<-createsimdataPN_CIRC(10,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI2b<-createsimdataPN_CIRC(50,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI2c<-createsimdataPN_CIRC(100,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI3a<-createsimdataPN_CIRC(10,0.5,0.5,0.5,0.5,0,0,0,60,500)
+dataI3b<-createsimdataPN_CIRC(50,0.5,0.5,0.5,0.5,0,0,0,60,500)
+dataI3c<-createsimdataPN_CIRC(100,0.5,0.5,0.5,0.5,0,0,0,60,500)
+dataI4a<-createsimdataPN_CIRC(10,0.5,0.5,0.5,0.5,0,0,0,1,500)
+dataI4b<-createsimdataPN_CIRC(50,0.5,0.5,0.5,0.5,0,0,0,1,500)
+dataI4c<-createsimdataPN_CIRC(100,0.5,0.5,0.5,0.5,0,0,0,1,500)
+
+dataJ1a<-createsimdataPN_CIRC(10,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ1b<-createsimdataPN_CIRC(50,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ1c<-createsimdataPN_CIRC(100,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ2a<-createsimdataPN_CIRC(10,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ2b<-createsimdataPN_CIRC(50,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ2c<-createsimdataPN_CIRC(100,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ3a<-createsimdataPN_CIRC(10,-0.2,-0.2,-0.2,-0.2,0,0,0,60,500)
+dataJ3b<-createsimdataPN_CIRC(50,-0.2,-0.2,-0.2,-0.2,0,0,0,60,500)
+dataJ3c<-createsimdataPN_CIRC(100,-0.2,-0.2,-0.2,-0.2,0,0,0,60,500)
+dataJ4a<-createsimdataPN_CIRC(10,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+dataJ4b<-createsimdataPN_CIRC(50,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+dataJ4c<-createsimdataPN_CIRC(100,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+
+dataK1a<-createsimdataPN_CIRC(10,2,2,2,2,0,0,0,2,500)
+dataK1b<-createsimdataPN_CIRC(50,2,2,2,2,0,0,0,2,500)
+dataK1c<-createsimdataPN_CIRC(100,2,2,2,2,0,0,0,2,500)
+dataK2a<-createsimdataPN_CIRC(10,2,2,2,2,0,0,0,10,500)
+dataK2b<-createsimdataPN_CIRC(50,2,2,2,2,0,0,0,10,500)
+dataK2c<-createsimdataPN_CIRC(100,2,2,2,2,0,0,0,10,500)
+dataK3a<-createsimdataPN_CIRC(10,2,2,2,2,0,0,0,60,500)
+dataK3b<-createsimdataPN_CIRC(50,2,2,2,2,0,0,0,60,500)
+dataK3c<-createsimdataPN_CIRC(100,2,2,2,2,0,0,0,60,500)
+dataK4a<-createsimdataPN_CIRC(10,2,2,2,2,0,0,0,1,500)
+dataK4b<-createsimdataPN_CIRC(50,2,2,2,2,0,0,0,1,500)
+dataK4c<-createsimdataPN_CIRC(100,2,2,2,2,0,0,0,1,500)
+
+save(dataI1a,file="E. Code for simulation (annotated)/datasets/dataI1a.Rdata", compress="xz")
+save(dataI1b,file="E. Code for simulation (annotated)/datasets/dataI1b.Rdata", compress="xz")
+save(dataI1c,file="E. Code for simulation (annotated)/datasets/dataI1c.Rdata", compress="xz")
+save(dataI2a,file="E. Code for simulation (annotated)/datasets/dataI2a.Rdata", compress="xz")
+save(dataI2b,file="E. Code for simulation (annotated)/datasets/dataI2b.Rdata", compress="xz")
+save(dataI2c,file="E. Code for simulation (annotated)/datasets/dataI2c.Rdata", compress="xz")
+save(dataI3a,file="E. Code for simulation (annotated)/datasets/dataI3a.Rdata", compress="xz")
+save(dataI3b,file="E. Code for simulation (annotated)/datasets/dataI3b.Rdata", compress="xz")
+save(dataI3c,file="E. Code for simulation (annotated)/datasets/dataI3c.Rdata", compress="xz")
+save(dataI4a,file="E. Code for simulation (annotated)/datasets/dataI4a.Rdata", compress="xz")
+save(dataI4b,file="E. Code for simulation (annotated)/datasets/dataI4b.Rdata", compress="xz")
+save(dataI4c,file="E. Code for simulation (annotated)/datasets/dataI4c.Rdata", compress="xz")
+
+save(dataJ1a,file="E. Code for simulation (annotated)/datasets/dataJ1a.Rdata", compress="xz")
+save(dataJ1b,file="E. Code for simulation (annotated)/datasets/dataJ1b.Rdata", compress="xz")
+save(dataJ1c,file="E. Code for simulation (annotated)/datasets/dataJ1c.Rdata", compress="xz")
+save(dataJ2a,file="E. Code for simulation (annotated)/datasets/dataJ2a.Rdata", compress="xz")
+save(dataJ2b,file="E. Code for simulation (annotated)/datasets/dataJ2b.Rdata", compress="xz")
+save(dataJ2c,file="E. Code for simulation (annotated)/datasets/dataJ2c.Rdata", compress="xz")
+save(dataJ3a,file="E. Code for simulation (annotated)/datasets/dataJ3a.Rdata", compress="xz")
+save(dataJ3b,file="E. Code for simulation (annotated)/datasets/dataJ3b.Rdata", compress="xz")
+save(dataJ3c,file="E. Code for simulation (annotated)/datasets/dataJ3c.Rdata", compress="xz")
+save(dataJ4a,file="E. Code for simulation (annotated)/datasets/dataJ4a.Rdata", compress="xz")
+save(dataJ4b,file="E. Code for simulation (annotated)/datasets/dataJ4b.Rdata", compress="xz")
+save(dataJ4c,file="E. Code for simulation (annotated)/datasets/dataJ4c.Rdata", compress="xz")
+
+save(dataK1a,file="E. Code for simulation (annotated)/datasets/dataK1a.Rdata", compress="xz")
+save(dataK1b,file="E. Code for simulation (annotated)/datasets/dataK1b.Rdata", compress="xz")
+save(dataK1c,file="E. Code for simulation (annotated)/datasets/dataK1c.Rdata", compress="xz")
+save(dataK2a,file="E. Code for simulation (annotated)/datasets/dataK2a.Rdata", compress="xz")
+save(dataK2b,file="E. Code for simulation (annotated)/datasets/dataK2b.Rdata", compress="xz")
+save(dataK2c,file="E. Code for simulation (annotated)/datasets/dataK2c.Rdata", compress="xz")
+save(dataK3a,file="E. Code for simulation (annotated)/datasets/dataK3a.Rdata", compress="xz")
+save(dataK3b,file="E. Code for simulation (annotated)/datasets/dataK3b.Rdata", compress="xz")
+save(dataK3c,file="E. Code for simulation (annotated)/datasets/dataK3c.Rdata", compress="xz")
+save(dataK4a,file="E. Code for simulation (annotated)/datasets/dataK4a.Rdata", compress="xz")
+save(dataK4b,file="E. Code for simulation (annotated)/datasets/dataK4b.Rdata", compress="xz")
+save(dataK4c,file="E. Code for simulation (annotated)/datasets/dataK4c.Rdata", compress="xz")
+
+source("E. Code for simulation (annotated)/Simulation functions data.R")
+createsimdataPN_CIRC_nocent<-function(n,B11,B12,B21,B22,a1,a2,mu_c,k,nsim){
+  set.seed(101)
+  data<-array(NA,dim=c(n,5,nsim), dimnames=list(NULL,c("x1","x2","y1","y2","theta"),NULL))
+  for(i in 1:nsim){
+    data[,,i]<-simregPN_CIRC_nocent(n,B11,B12,B21,B22,a1,a2,mu_c,k)
+  }
+  return(data)
+}
+
+dataI1a2<-createsimdataPN_CIRC_nocent(10,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI1b2<-createsimdataPN_CIRC_nocent(50,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI1c2<-createsimdataPN_CIRC_nocent(100,0.5,0.5,0.5,0.5,0,0,0,2,500)
+dataI2a2<-createsimdataPN_CIRC_nocent(10,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI2b2<-createsimdataPN_CIRC_nocent(50,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI2c2<-createsimdataPN_CIRC_nocent(100,0.5,0.5,0.5,0.5,0,0,0,10,500)
+dataI4a2<-createsimdataPN_CIRC_nocent(10,0.5,0.5,0.5,0.5,0,0,0,1,500)
+dataI4b2<-createsimdataPN_CIRC_nocent(50,0.5,0.5,0.5,0.5,0,0,0,1,500)
+dataI4c2<-createsimdataPN_CIRC_nocent(100,0.5,0.5,0.5,0.5,0,0,0,1,500)
+
+dataJ1a2<-createsimdataPN_CIRC_nocent(10,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ1b2<-createsimdataPN_CIRC_nocent(50,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ1c2<-createsimdataPN_CIRC_nocent(100,-0.2,-0.2,-0.2,-0.2,0,0,0,2,500)
+dataJ2a2<-createsimdataPN_CIRC_nocent(10,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ2b2<-createsimdataPN_CIRC_nocent(50,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ2c2<-createsimdataPN_CIRC_nocent(100,-0.2,-0.2,-0.2,-0.2,0,0,0,10,500)
+dataJ4a2<-createsimdataPN_CIRC_nocent(10,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+dataJ4b2<-createsimdataPN_CIRC_nocent(50,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+dataJ4c2<-createsimdataPN_CIRC_nocent(100,-0.2,-0.2,-0.2,-0.2,0,0,0,1,500)
+
+dataK1a2<-createsimdataPN_CIRC_nocent(10,2,2,2,2,0,0,0,2,500)
+dataK1b2<-createsimdataPN_CIRC_nocent(50,2,2,2,2,0,0,0,2,500)
+dataK1c2<-createsimdataPN_CIRC_nocent(100,2,2,2,2,0,0,0,2,500)
+dataK2a2<-createsimdataPN_CIRC_nocent(10,2,2,2,2,0,0,0,10,500)
+dataK2b2<-createsimdataPN_CIRC_nocent(50,2,2,2,2,0,0,0,10,500)
+dataK2c2<-createsimdataPN_CIRC_nocent(100,2,2,2,2,0,0,0,10,500)
+dataK4a2<-createsimdataPN_CIRC_nocent(10,2,2,2,2,0,0,0,1,500)
+dataK4b2<-createsimdataPN_CIRC_nocent(50,2,2,2,2,0,0,0,1,500)
+dataK4c2<-createsimdataPN_CIRC_nocent(100,2,2,2,2,0,0,0,1,500)
+
+dataI2c2diffmuc<-createsimdataPN_CIRC_nocent(100,0.5,0.5,0.5,0.5,0,0,(0.5*pi),10,500)
+dataI2a2diffmuc<-createsimdataPN_CIRC_nocent(10,0.5,0.5,0.5,0.5,0,0,(0.5*pi),10,500)
+
+save(dataI1a2,file="E. Code for simulation (annotated)/datasets/dataI1a2.Rdata", compress="xz")
+save(dataI1b2,file="E. Code for simulation (annotated)/datasets/dataI1b2.Rdata", compress="xz")
+save(dataI1c2,file="E. Code for simulation (annotated)/datasets/dataI1c2.Rdata", compress="xz")
+save(dataI2a2,file="E. Code for simulation (annotated)/datasets/dataI2a2.Rdata", compress="xz")
+save(dataI2b2,file="E. Code for simulation (annotated)/datasets/dataI2b2.Rdata", compress="xz")
+save(dataI2c2,file="E. Code for simulation (annotated)/datasets/dataI2c2.Rdata", compress="xz")
+save(dataI4a2,file="E. Code for simulation (annotated)/datasets/dataI4a2.Rdata", compress="xz")
+save(dataI4b2,file="E. Code for simulation (annotated)/datasets/dataI4b2.Rdata", compress="xz")
+save(dataI4c2,file="E. Code for simulation (annotated)/datasets/dataI4c2.Rdata", compress="xz")
+
+save(dataJ1a2,file="E. Code for simulation (annotated)/datasets/dataJ1a2.Rdata", compress="xz")
+save(dataJ1b2,file="E. Code for simulation (annotated)/datasets/dataJ1b2.Rdata", compress="xz")
+save(dataJ1c2,file="E. Code for simulation (annotated)/datasets/dataJ1c2.Rdata", compress="xz")
+save(dataJ2a2,file="E. Code for simulation (annotated)/datasets/dataJ2a2.Rdata", compress="xz")
+save(dataJ2b2,file="E. Code for simulation (annotated)/datasets/dataJ2b2.Rdata", compress="xz")
+save(dataJ2c2,file="E. Code for simulation (annotated)/datasets/dataJ2c2.Rdata", compress="xz")
+save(dataJ4a2,file="E. Code for simulation (annotated)/datasets/dataJ4a2.Rdata", compress="xz")
+save(dataJ4b2,file="E. Code for simulation (annotated)/datasets/dataJ4b2.Rdata", compress="xz")
+save(dataJ4c2,file="E. Code for simulation (annotated)/datasets/dataJ4c2.Rdata", compress="xz")
+
+save(dataK1a2,file="E. Code for simulation (annotated)/datasets/dataK1a2.Rdata", compress="xz")
+save(dataK1b2,file="E. Code for simulation (annotated)/datasets/dataK1b2.Rdata", compress="xz")
+save(dataK1c2,file="E. Code for simulation (annotated)/datasets/dataK1c2.Rdata", compress="xz")
+save(dataK2a2,file="E. Code for simulation (annotated)/datasets/dataK2a2.Rdata", compress="xz")
+save(dataK2b2,file="E. Code for simulation (annotated)/datasets/dataK2b2.Rdata", compress="xz")
+save(dataK2c2,file="E. Code for simulation (annotated)/datasets/dataK2c2.Rdata", compress="xz")
+save(dataK4a2,file="E. Code for simulation (annotated)/datasets/dataK4a2.Rdata", compress="xz")
+save(dataK4b2,file="E. Code for simulation (annotated)/datasets/dataK4b2.Rdata", compress="xz")
+save(dataK4c2,file="E. Code for simulation (annotated)/datasets/dataK4c2.Rdata", compress="xz")
+
+save(dataI2c2diffmuc,file="E. Code for simulation (annotated)/datasets/dataI2c2diffmuc.Rdata", compress="xz")
+save(dataI2a2diffmuc,file="E. Code for simulation (annotated)/datasets/dataI2a2diffmuc.Rdata", compress="xz")
+
+createsimdataPN_2X<-function(n,B11,B12,B21,B22,a1,a2,mu,sd,dep,nsim){
+  set.seed(101)
+  data<-array(NA,dim=c(n,5,nsim), dimnames=list(NULL,c("x1","x2","y1","y2","theta"),NULL))
+  for(i in 1:nsim){
+    source("E. Code for simulation (annotated)/Simulation functions data.R")
+    data[,,i]<-simregPN_2X(n,B11,B12,B21,B22,a1,a2,mu,sd,dep)
+  }
+  return(data)
+}
+
+dataG4b<-createsimdataPN_2X(50,-0.2,2,-0.2,2,0,0,0,1,0,500)
+dataG4c<-createsimdataPN_2X(50,-0.2,2,-0.2,2,0,0,0,1,0,500)
+dataG5b<-createsimdataPN_2X(50,-0.2,-0.2,-0.2,-0.2,0,0,0,1,0,500)
+dataG5c<-createsimdataPN_2X(100,-0.2,-0.2,-0.2,-0.2,0,0,0,1,0,500)
+dataF4b<-createsimdataPN_2X(50,0.5,-0.2,0.5,-0.2,0,0,0,1,0,500)
+dataF4c<-createsimdataPN_2X(100,0.5,-0.2,0.5,-0.2,0,0,0,1,0,500)
+dataF5b<-createsimdataPN_2X(50,0.5,0.5,0.5,0.5,0,0,0,1,0,500)
+dataF5c<-createsimdataPN_2X(100,0.5,0.5,0.5,0.5,0,0,0,1,0,500)
+dataF6b<-createsimdataPN_2X(50,0.5,2,0.5,2,0,0,0,1,0,500)
+dataF6c<-createsimdataPN_2X(100,0.5,2,0.5,2,0,0,0,1,0,500)
+
+
+save(dataG4b,file="E. Code for simulation (annotated)/datasets/dataG4b.Rdata", compress="xz")
+save(dataG4c,file="E. Code for simulation (annotated)/datasets/dataG4c.Rdata", compress="xz")
+save(dataG5b,file="E. Code for simulation (annotated)/datasets/dataG5b.Rdata", compress="xz")
+save(dataG5c,file="E. Code for simulation (annotated)/datasets/dataG5c.Rdata", compress="xz")
+save(dataF4b,file="E. Code for simulation (annotated)/datasets/dataF4b.Rdata", compress="xz")
+save(dataF4c,file="E. Code for simulation (annotated)/datasets/dataF4c.Rdata", compress="xz")
+save(dataF5b,file="E. Code for simulation (annotated)/datasets/dataF5b.Rdata", compress="xz")
+save(dataF5c,file="E. Code for simulation (annotated)/datasets/dataF5c.Rdata", compress="xz")
+save(dataF6b,file="E. Code for simulation (annotated)/datasets/dataF6b.Rdata", compress="xz")
+save(dataF6c,file="E. Code for simulation (annotated)/datasets/dataF6c.Rdata", compress="xz")
+
+
+
+createsimdataPN_CIRC_X<-function(n, B11, B12, B13, B21, B22, B23, a1, a2, mu_c, k, mu,sd,nsim){
+  set.seed(101)
+  data<-array(NA,dim=c(n,7,nsim), dimnames=list(NULL,c("x","x1","x2", "x3","y1","y2","theta"),NULL))
+  for(i in 1:nsim){
+    source("E. Code for simulation (annotated)/Simulation functions data.R")
+    data[,,i]<-simregPN_CIRC_X(n, B11, B12, B13, B21, B22, B23, a1, a2, mu_c, k, mu,sd)
+  }   
+  return(data)
+}
+
+
+dataL1b<-createsimdataPN_CIRC_X(50,-0.2, -0.2, 0.5, -0.2, -0.2, 0.5,0,0,0,2,0,1,500)
+dataM1b<-createsimdataPN_CIRC_X(50,-0.2, -0.2, -0.2, -0.2, -0.2, -0.2,0,0,0,2,0,1,500)
+dataN1b<-createsimdataPN_CIRC_X(50,0.5, 0.5, -0.2, 0.5, 0.5, -0.2,0,0,0,2,0,1,500)
+dataO1b<-createsimdataPN_CIRC_X(50,0.5, 0.5, 0.5, 0.5, 0.5, 0.5,0,0,0,2,0,1,500)
+
+save(dataL1b,file="E. Code for simulation (annotated)/datasets/dataL1b.Rdata", compress="xz")
+save(dataM1b,file="E. Code for simulation (annotated)/datasets/dataM1b.Rdata", compress="xz")
+save(dataN1b,file="E. Code for simulation (annotated)/datasets/dataN1b.Rdata", compress="xz")
+save(dataO1b,file="E. Code for simulation (annotated)/datasets/dataO1b.Rdata", compress="xz")
+
+dataL1c<-createsimdataPN_CIRC_X(100,-0.2, -0.2, 0.5, -0.2, -0.2, 0.5,0,0,0,2,0,1,500)
+dataM1c<-createsimdataPN_CIRC_X(100,-0.2, -0.2, -0.2, -0.2, -0.2, -0.2,0,0,0,2,0,1,500)
+dataN1c<-createsimdataPN_CIRC_X(100,0.5, 0.5, -0.2, 0.5, 0.5, -0.2,0,0,0,2,0,1,500)
+dataO1c<-createsimdataPN_CIRC_X(100,0.5, 0.5, 0.5, 0.5, 0.5, 0.5,0,0,0,2,0,1,500)
+
+save(dataL1c,file="E. Code for simulation (annotated)/datasets/dataL1c.Rdata", compress="xz")
+save(dataM1c,file="E. Code for simulation (annotated)/datasets/dataM1c.Rdata", compress="xz")
+save(dataN1c,file="E. Code for simulation (annotated)/datasets/dataN1c.Rdata", compress="xz")
+save(dataO1c,file="E. Code for simulation (annotated)/datasets/dataO1c.Rdata", compress="xz")
+
+dataL1d<-createsimdataPN_CIRC_X(200,-0.2, -0.2, 0.5, -0.2, -0.2, 0.5,0,0,0,2,0,1,500)
+save(dataL1d,file="E. Code for simulation (annotated)/datasets/dataL1d.Rdata", compress="xz")
+dataL1e<-createsimdataPN_CIRC_X(400,-0.2, -0.2, 0.5, -0.2, -0.2, 0.5,0,0,0,2,0,1,500)
+save(dataL1e,file="E. Code for simulation (annotated)/datasets/dataL1e.Rdata", compress="xz")
+
+
+createsimdataPN_DIFF<-function(n, B11, B12, B13, B21, B22, B23, B24, a1, a2, mu_c, k, mu1,sd1, mu2,sd2,nsim){
+  set.seed(101)
+  data<-array(NA,dim=c(n,8,nsim), dimnames=list(NULL,c("x","x1","x2", "x3", "x4","y1","y2","theta"),NULL))
+  for(i in 1:nsim){
+    source("E. Code for simulation (annotated)/Simulation functions data.R")
+    data[,,i]<-simregPN_DIFF(n, B11, B12, B13, B21, B22, B23, B24, a1, a2, mu_c, k, mu1,sd1, mu2,sd2)
+  }
+    return(data)
+}
+
+
+dataEmpirical1<-createsimdataPN_DIFF(50,1.2,-0.002,0.5,-0.4,1.5,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+dataEmpirical2<-createsimdataPN_DIFF(100,1.2,-0.002,0.5,-0.4,1.5,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+dataEmpirical3<-createsimdataPN_DIFF(50,1.2,1.2,0.5,-0.4,-0.4,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+dataEmpirical4<-createsimdataPN_DIFF(100,1.2,1.2,0.5,-0.4,-0.4,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+dataEmpirical5<-createsimdataPN_DIFF(50,-0.1,1.5,0.5,-0.1,1.5,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+dataEmpirical6<-createsimdataPN_DIFF(100,-0.1,1.5,0.5,-0.1,1.5,0.5,-0.9,0,0,0,2,0,1,0,1,500)
+
+save(dataEmpirical1,file="E. Code for simulation (annotated)/datasets/dataEmpirical1.Rdata", compress="xz")
+save(dataEmpirical2,file="E. Code for simulation (annotated)/datasets/dataEmpirical2.Rdata", compress="xz")
+save(dataEmpirical3,file="E. Code for simulation (annotated)/datasets/dataEmpirical3.Rdata", compress="xz")
+save(dataEmpirical4,file="E. Code for simulation (annotated)/datasets/dataEmpirical4.Rdata", compress="xz")
+save(dataEmpirical5,file="E. Code for simulation (annotated)/datasets/dataEmpirical5.Rdata", compress="xz")
+save(dataEmpirical6,file="E. Code for simulation (annotated)/datasets/dataEmpirical6.Rdata", compress="xz")

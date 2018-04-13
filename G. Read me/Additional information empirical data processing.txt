@@ -1,0 +1,21 @@
+Data processing:
+
+Data was obtained from Tim mainhard (t.m.mainhard@uu.nl) and also used in the following paper:
+
+Mainhard, M. T., Brekelmans, M., Brok, P. d., & Wubbels, T. (2011). 
+The development of the classroom social climate during the first months of the school year. 
+Contemporary Educational Psychology, 36(3), 190-200.
+
+Original file (can be requested from authors):
+	-label_data OWK.sav
+Syntax restructuring:
+	-syntax data OWK.sps
+Restructured file:
+	-label_data OWK_restructured.sav
+	-label_data OWK_restructured.csv
+File without missings (all teachers with a missing on any variable were deleted)
+	-label_data OWK_restructured_nomis.sav
+	-label_data OWK_restructured_nomis.csv
+File for final analysis
+	-empirical_data.sav
+

@@ -1,0 +1,20 @@
+First the datasets for simultion need to be created using:
+
+	-Create data simulation studies.R
+
+Analyses for the slice sampler are found under:
+
+	-Code for obtaining data in simulation tables Slice.R
+
+Analyses for the MH sampler are found under:
+
+	-Code for obtaining data in simulation tables MH new2.R
+
+To check convergence:
+
+	-Convergence checks and figures slice and MH sampler.R
+
+To obtain results after adding an additional burn-in:
+
+	-Obtain post simulation summary stats MH new2.R
+	-Obtain post simulation summary stats Slice.R
