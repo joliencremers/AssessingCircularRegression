@@ -13,9 +13,9 @@ Syntax restructuring:
 Restructured file:
 	-label_data OWK_restructured.sav
 	-label_data OWK_restructured.csv
-File without missings (all teachers with a missing on any variable were deleted)
+File without missings (all teachers with a missing on any variable were deleted):
 	-label_data OWK_restructured_nomis.sav
 	-label_data OWK_restructured_nomis.csv
-File for final analysis
+File for final analysis:
 	-empirical_data.sav
 
